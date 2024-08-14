@@ -28,7 +28,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="rounded-xl flex items-center gap-2 bg-background-darker shadow">
+    <div className="rounded-xl flex items-center bg-background-darker shadow border border-transparent focus-within:border-primary transition-all">
       <div className="px-4 py-2">
         {loading ? (
           <LoaderCircle size={16} className="animate-spin" />
@@ -40,8 +40,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         type="text"
         value={query}
         onChange={handleChange}
-        placeholder="Search stock symbols (AAPL, GOOG)"
-        className={`caret-primary w-full py-2 bg-transparent outline-none ${
+        placeholder="Search stock symbols (AAPL or GOOG)"
+        className={`caret-primary w-full py-2 bg-transparent outline-none text-sm md:text-base ${
           query.length > 0 && "uppercase"
         }`}
       />
