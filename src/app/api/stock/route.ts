@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { MESSAGES } from "../../_lib/constants";
 
 const API_KEY = process.env.FINNHUB_API_KEY;
 const BASE_URL = "https://finnhub.io/api/v1";
-
-export const MESSAGES = {
-  FETCHING_ERROR: "You do not have access to this stock data",
-  INVALID_SYMBOL: "Please enter a valid stock symbol (AAPL or GOOG)",
-};
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);

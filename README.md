@@ -11,6 +11,8 @@ The app fetches data from the [Finnhub API](https://finnhub.io/docs/api/) and di
 - **`_components/`**:
   - **`SearchBar.tsx`**: The search bar component where users input stock symbols.
   - **`StockProfile.tsx`**: Displays the stock details after a search.
+- **`_lib/`**:
+  - **`constants.ts`**: Contains constant variables like error messages.
 - **`_utils/`**:
   - **`fetchStockData.ts`**: Handles API requests for stock data.
   - **`formatter.ts`**: Handles numbers and dates formatting.

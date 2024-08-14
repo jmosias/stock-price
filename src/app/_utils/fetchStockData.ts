@@ -1,4 +1,4 @@
-import { MESSAGES } from "../api/stock/route";
+import { MESSAGES } from "../_lib/constants";
 import { StockData } from "../store";
 
 export const fetchStockData = async (symbol: string): Promise<StockData> => {
