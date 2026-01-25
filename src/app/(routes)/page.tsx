@@ -47,8 +47,8 @@ const Home: React.FC = () => {
             duration={200}
             height={error && query && !stockData.currentPrice ? "auto" : 0}
           >
-            <div className="px-4 py-2 rounded-xl flex justify-center items-center opacity-65 bg-background-darker shadow">
-              <p className="text-sm font-extralight">{error}</p>
+            <div className="px-4 py-2 flex justify-center items-center opacity-70 bg-background-darker shadow">
+              <p className="text-sm font-mono">{error}</p>
             </div>
           </AnimateHeight>
         </div>

@@ -2,16 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Now";
+  src: url("./assets/fonts/Now-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Now";
+  src: url("./assets/fonts/Now-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sono";
+  src: url("./assets/fonts/Sono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --primary: #048ba8;
-  --success: #20e9a9;
-  --error: #c44900;
-  --background: #28262c;
-  --background-darker: #1e1c21;
-  --foreground: #f0eff4;
+  --primary: #23cece;
+  --success: #84c318;
+  --error: #cc2936;
+  --background: #081f21;
+  --background-darker: #040f10;
+  --foreground: #f1f2f6;
+
+  --font-sans: "Now", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-mono: "Sono", monospace;
 }
 
 ::selection {
   background-color: var(--primary);
-  color: var(--foreground);
+  color: var(--background);
 }

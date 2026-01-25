@@ -3,7 +3,7 @@
 import { useAtom } from "jotai";
 import { queryAtom, loadingAtom, errorAtom } from "../store";
 import { useDebouncedCallback } from "use-debounce";
-import { Search, LoaderCircle } from "lucide-react";
+import { Search, LoaderCircle, Square } from "lucide-react";
 
 interface SearchBarProps {
   onSearch: (symbol: string) => void;
@@ -28,10 +28,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="rounded-xl flex items-center bg-background-darker shadow border border-transparent focus-within:border-primary transition-all">
+    <div className="font-mono flex items-center bg-background-darker shadow border border-transparent focus-within:border-primary transition-all">
       <div className="px-4 py-2">
         {loading ? (
-          <LoaderCircle size={16} className="animate-spin" />
+          <Square size={16} className="animate-spin" />
         ) : (
           <Search size={16} />
         )}
@@ -40,7 +40,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         type="text"
         value={query}
         onChange={handleChange}
-        placeholder="Search stock symbols (AAPL or GOOG)"
+        placeholder="Search for stock symbols [e.g. AAPL / GOOG / MSFT]"
         className={`caret-primary w-full py-2 bg-transparent outline-none text-sm md:text-base ${
           query.length > 0 && "uppercase"
         }`}

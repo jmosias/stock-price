@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
 import "../globals.css";
-
-const notoSans = Noto_Sans({
-  weight: ["200", "400", "700"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Real-Time Stock Prices",
@@ -19,7 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notoSans.className} bg-background text-foreground`}>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Stocks" />
+      </head>
+      <body className="bg-background text-foreground font-sans`">
         {children}
       </body>
     </html>

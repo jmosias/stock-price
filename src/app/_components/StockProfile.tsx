@@ -34,8 +34,8 @@ const StockProfile: React.FC = () => {
   if (!currentPrice) return null;
 
   return (
-    <div className="w-full h-full flex flex-col gap-8 p-4 rounded-xl bg-background-darker shadow md:gap-12">
-      <div className="flex flex-col-reverse gap-2 text-xs font-extralight opacity-65 md:flex-row md:items-center">
+    <div className="w-full h-full flex flex-col gap-8 p-4 bg-background-darker shadow md:gap-12">
+      <div className="flex flex-col-reverse gap-2 text-xs font-mono opacity-70 md:flex-row md:items-center">
         {country && (
           <>
             <p>{country}</p>
@@ -54,49 +54,35 @@ const StockProfile: React.FC = () => {
       <div className="flex flex-col gap-8 md:flex-row md:justify-between md:items-center">
         <div className="flex items-center gap-4">
           {logo ? (
-            <Image
-              src={logo}
-              alt={`${name} Logo`}
-              width={64}
-              height={64}
-              className="rounded-xl"
-              placeholder="blur"
-              blurDataURL="/images/placeholder.png"
-            />
+            <div className="size-[64px] bg-primary">
+              <Image src={logo} alt={`${name} Logo`} width={64} height={64} />
+            </div>
           ) : (
-            <Image
-              src="/images/placeholder.png"
-              alt={`Placeholder logo`}
-              width={64}
-              height={64}
-              className="rounded-xl"
-            />
+            <div className="size-[64px] bg-primary"></div>
           )}
           <div className="flex flex-col">
-            <h2 className="text-4xl font-bold">{ticker}</h2>
+            <h2 className="text-4xl font-black">{ticker}</h2>
             {weburl ? (
               <a
-                className="flex items-center gap-2 text-primary"
+                className="flex items-center gap-2 text-primary font-mono border-b border-transparent hover:border-primary"
                 href={weburl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {name}
                 <span>
-                  <ExternalLink size={12} strokeWidth={1} />
+                  <ExternalLink size={14} strokeWidth={1} />
                 </span>
               </a>
             ) : (
-              <p className="font-extralight">{name}</p>
+              <p className="font-mono">{name}</p>
             )}
           </div>
         </div>
 
         <div className="flex flex-col items-end">
-          <p className="text-4xl font-bold">
-            <span className="text-xs font-extralight opacity-65">
-              {currency}
-            </span>{" "}
+          <p className="text-4xl font-black">
+            <span className="text-xs font-mono opacity-70">{currency}</span>{" "}
             {currentPrice.toFixed(2)}
           </p>
           <p
@@ -105,8 +91,8 @@ const StockProfile: React.FC = () => {
             {percentChange > 0 && "+"}
             {percentChange.toFixed(2)}%{" "}
             <span>
-              ({absoluteChange > 0 && "+"}
-              {absoluteChange.toFixed(2)})
+              ( {absoluteChange > 0 && "+"}
+              {absoluteChange.toFixed(2)} )
             </span>
           </p>
         </div>
@@ -138,8 +124,8 @@ interface ProfileInfoProps {
 const ProfileInfo: React.FC<ProfileInfoProps> = ({ title, data }) => {
   return (
     <div className="flex flex-col items-end">
-      <p className="text-xs font-extralight uppercase opacity-65">{title}</p>
-      <p className="text-lg font-bold">{data}</p>
+      <p className="font-mono text-xs uppercase opacity-70">{title}</p>
+      <p className="text-lg font-black">{data}</p>
     </div>
   );
 };
